@@ -22,4 +22,20 @@ class CocktailService {
     return drinks.map((json) => Cocktail.fromJson(json)).toList();
     
   }
+    Future<Cocktail> getCocktail(int id) async {
+    final requestUrl = '$_baseUrl/lookup.php?i=$id';
+
+    final response = await http.get(
+      Uri.parse(requestUrl),
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to load cocktail');
+    }
+
+    final json = response.body;
+    final data = jsonDecode(json) as Map<String, dynamic>;
+    final drinks = data['drinks'] as List;
+    return Cocktail.fromJson(drinks[0]);
+  }
 }

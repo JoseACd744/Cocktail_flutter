@@ -22,10 +22,17 @@ class Cocktail{
 
     Map<String, dynamic> toMap() {
       return {
-        'idDrink': idDrink,
+        'id': idDrink,
         'strDrinkThumb': strDrinkThumb,
         'strDrink': strDrink
       };
     }
+
+  Cocktail.fromMap(Map<String, dynamic> map):
+    idDrink = map['id'],
+    strDrink = map['name'],
+    strDrinkThumb = map['image'],
+    strInstructions = map['instructions'],
+    strCategory = '';
 }
 
