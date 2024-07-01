@@ -1,0 +1,28 @@
+name: flutter_cocktail
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  cupertino_icons: ^1.0.8
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+  http: ^1.2.1
+  path: ^1.9.0
+  sqflite: ^2.3.3+1
+
+flutter:
+  uses-material-design: true
+
+flutter_icons:
+  android: "ic_launcher_icon" # Nombre del icono actualizado
+  image_path: "assets/icon/icon.png"
