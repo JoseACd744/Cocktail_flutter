@@ -21,11 +21,20 @@ class Cocktail{
     strInstructions = json['strInstructions'];
 
     Map<String, dynamic> toMap() {
-      return {
-        'idDrink': idDrink,
-        'strDrinkThumb': strDrinkThumb,
-        'strDrink': strDrink
-      };
-    }
+    return {
+    'id': idDrink, // Cambiado de 'idDrink' a 'id'
+    'image': strDrinkThumb, // Cambiado de 'strDrinkThumb' a 'image'
+    'name': strDrink, // Cambiado de 'strDrink' a 'name'
+    'category': strCategory, // Añadido para incluir 'category'
+    'instructions': strInstructions, // Añadido para incluir 'instructions'
+    };
+  }
+
+    Cocktail.fromMap(Map<String, dynamic> map):
+      idDrink = map['id'],
+      strDrinkThumb = map['image'],
+      strDrink = map['name'],
+      strCategory = map['category'],
+      strInstructions = map['instructions'] ?? '';
 }
 
